@@ -2,10 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Inicio | Cátedra de Bioquímica Clínica UCMSS</title>
     <!-- Vinculación con los archivos externos del proyecto -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Reglas Críticas para evitar desbordamiento horizontal */
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Ajuste responsivo para el Hero */
+        @media (max-width: 768px) {
+            .hero > div {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            .hero div[style*="text-align: right"] {
+                text-align: center !important;
+                margin-top: 1rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -28,8 +62,8 @@
                 <p>Especialidad de Primer Grado. Universidad de Ciencias Médicas de Sancti Spíritus "Dr. Faustino Pérez Hernández".</p>
             </div>
             <div style="flex: 1; text-align: right;">
-                <!-- Imagen del Logo Corregida -->
-                <img src="assets/img/logo-ucmss.png" alt="Logo UCMSS" style="max-height: 120px; width: auto; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));">
+                <!-- Imagen del Logo Corregida con contención -->
+                <img src="assets/img/logo-ucmss.png" alt="Logo UCMSS" style="max-height: 120px; width: auto; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1)); margin-left: auto; margin-right: auto;">
             </div>
         </div>
     </header>
@@ -79,7 +113,7 @@
                     </div>
 
                     <p style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-muted);"> Ver plan temático y detalles de la especialidad a continuación:</p>
-                    <!-- Ajuste de gap a 20px para separar los botones según lo solicitado -->
+                    
                     <div style="margin-top: 1rem; display: flex; gap: 20px; flex-wrap: wrap;">
                         <a href="assets/docs/Programa_de_estudio_2026.pdf" style="padding: 10px 15px; background: var(--primary); color: white; text-decoration: none; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Programa actual (PDF)</a>
                         <a href="assets/docs/Programa_de_estudios_2000.pdf" style="padding: 10px 15px; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Histórico 2000</a>
