@@ -1,0 +1,273 @@
+/* BIO-MODERN FRAMEWORK 2026 
+   Diseño de Alta Gama para Instituciones Médicas
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap');
+
+:root {
+    --primary: #004d40;
+    --primary-light: #00695c;
+    --accent: #00ffa2; /* Verde neón médico para detalles */
+    --accent-soft: rgba(0, 255, 162, 0.1);
+    --text-main: #1a202c;
+    --text-secondary: #4a5568;
+    --bg-body: #f0f4f3;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.7);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- REGLAS DE SEGURIDAD MÓVIL (AGREGADAS) --- */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Evita el desbordamiento por padding */
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.7;
+    /* Fondo con gradiente orgánico */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 105, 92, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 191, 165, 0.05) 0%, transparent 40%);
+}
+
+/* NAVEGACIÓN ULTRA-MODERNA */
+.navbar {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-brand::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 3px;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* HERO SECTION DE ALTO IMPACTO */
+.hero {
+    padding: 140px 8% 120px; 
+    background: linear-gradient(135deg, var(--primary) 0%, #002d26 100%);
+    color: white;
+    position: relative;
+    clip-path: ellipse(160% 100% at 50% 0%);
+    margin-bottom: 4rem;
+    max-width: 100%; /* Asegura que no desborde */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem); /* Ajustado el mínimo a 2.5rem para móvil */
+    font-weight: 800;
+    line-height: 1.1; 
+    letter-spacing: -3px;
+    margin-bottom: 2rem;
+    padding-bottom: 0.1em;
+    background: linear-gradient(to bottom, #ffffff, #a0aec0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    word-wrap: break-word; /* Rompe palabras si son muy largas en móvil */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+/* BOTONES ESTILO APP */
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 16px 35px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--primary);
+    box-shadow: 0 10px 25px rgba(0, 255, 162, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 255, 162, 0.4);
+}
+
+/* CONTENEDOR Y TARJETAS */
+.main-container {
+    padding: 0 8% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    transition: var(--transition);
+    width: 100%; /* Asegura que la tarjeta no empuje el layout */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    line-height: 1.2;
+    padding-bottom: 0.1em;
+}
+
+.card h2::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    padding: 15px 0;
+    border-bottom: 1px solid #edf2f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card li strong {
+    color: var(--primary);
+}
+
+/* FOOTER */
+footer {
+    background: #001a16;
+    color: white;
+    padding: 100px 8% 50px;
+    text-align: left;
+}
+
+footer p {
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 3.5rem; }
+    .hero { text-align: center; clip-path: none; }
+    .hero p { margin: 0 auto 3rem; }
+    .cta-group { justify-content: center; }
+    .navbar { padding: 0 5%; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2.2rem; }
+    .card { padding: 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.75rem; }
+}
